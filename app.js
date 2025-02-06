@@ -77,13 +77,12 @@
 // });
 
 function updateModels() {
-    var brand = document.getElementById("brand").value;
-    var modelSelect = document.getElementById("model");
+    let brand = document.getElementById("brand").value;
+    let modelSelect = document.getElementById("model");
     
-    // Clear the current options
     modelSelect.innerHTML = "";
     
-    var models = {
+    let models = {
         "toyota": ["Corolla", "Camry", "Prius", "RAV4"],
         "honda": ["Civic", "Accord", "CR-V", "Pilot"],
         "ford": ["F-150", "Mustang", "Explorer", "Escape"],
@@ -93,17 +92,16 @@ function updateModels() {
         "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
     };
 
-    // Add the default option for models
-    var defaultOption = document.createElement("option");
+    let defaultOption = document.createElement("option");
     defaultOption.text = "Select a model";
     defaultOption.disabled = true;
     defaultOption.selected = true;
     modelSelect.add(defaultOption);
 
-    // Add the models for the selected brand
+    
     if (models[brand]) {
         models[brand].forEach(function(model) {
-            var option = document.createElement("option");
+            let option = document.createElement("option");
             option.value = model.toLowerCase();
             option.text = model;
             modelSelect.add(option);

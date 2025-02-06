@@ -61,7 +61,7 @@ header input[type="text"] {
 select{
     padding: 5px;
     width: 200px;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 /* Main Content Styles */
 main {
