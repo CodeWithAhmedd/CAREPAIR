@@ -76,35 +76,62 @@
 //     newsletterForm.addEventListener('submit', validateNewsletterForm);
 // });
 
+// function updateModels() {
+//     let brand = document.getElementById("brand").value;
+//     let modelSelect = document.getElementById("model");
+    
+//     modelSelect.innerHTML = "";
+    
+//     let models = {
+//         "toyota": ["Corolla", "Camry", "Prius", "RAV4"],
+//         "honda": ["Civic", "Accord", "CR-V", "Pilot"],
+//         "ford": ["F-150", "Mustang", "Explorer", "Escape"],
+//         "chevrolet": ["Silverado", "Malibu", "Equinox", "Traverse"],
+//         "bmw": ["3 Series", "5 Series", "X5", "X3"],
+//         "audi": ["A3", "A4", "Q5", "Q7"],
+//         "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
+//     };
+
+//     let defaultOption = document.createElement("option");
+//     defaultOption.text = "Select a model";
+//     defaultOption.disabled = true;
+//     defaultOption.selected = true;
+//     modelSelect.add(defaultOption);
+
+    
+//     if (models[brand]) {
+//         models[brand].forEach(function(model) {
+//             let option = document.createElement("option");
+//             option.value = model.toLowerCase();
+//             option.text = model;
+//             modelSelect.add(option);
+//         });
+//     }
+// }
 function updateModels() {
-    let brand = document.getElementById("brand").value;
-    let modelSelect = document.getElementById("model");
-    
-    modelSelect.innerHTML = "";
-    
-    let models = {
-        "toyota": ["Corolla", "Camry", "Prius", "RAV4"],
-        "honda": ["Civic", "Accord", "CR-V", "Pilot"],
-        "ford": ["F-150", "Mustang", "Explorer", "Escape"],
-        "chevrolet": ["Silverado", "Malibu", "Equinox", "Traverse"],
-        "bmw": ["3 Series", "5 Series", "X5", "X3"],
-        "audi": ["A3", "A4", "Q5", "Q7"],
-        "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
-    };
-
-    let defaultOption = document.createElement("option");
-    defaultOption.text = "Select a model";
-    defaultOption.disabled = true;
-    defaultOption.selected = true;
-    modelSelect.add(defaultOption);
-
-    
-    if (models[brand]) {
-        models[brand].forEach(function(model) {
-            let option = document.createElement("option");
-            option.value = model.toLowerCase();
-            option.text = model;
-            modelSelect.add(option);
-        });
-    }
+    let selectedBrand = document.getElementById('brand').value;
+    let carCards = document.querySelectorAll('.car-card');
+        carCards.forEach(card => {
+        if (selectedBrand === "" || card.getAttribute('data-brand') === selectedBrand) {
+            card.style.display = ''; 
+        } else {
+            card.style.display = 'none'; 
+        }
+    });
 }
+function updateModels() {
+        let brand = document.getElementById("brand").value;
+        let modelSelect = document.getElementById("model");
+        
+        modelSelect.innerHTML = "";
+        
+        let models = {
+            "toyota": ["Corolla", "Camry", "Prius", "RAV4"],
+            "honda": ["Civic", "Accord", "CR-V", "Pilot"],
+            "ford": ["F-150", "Mustang", "Explorer", "Escape"],
+            "chevrolet": ["Silverado", "Malibu", "Equinox", "Traverse"],
+            "bmw": ["3 Series", "5 Series", "X5", "X3"],
+            "audi": ["A3", "A4", "Q5", "Q7"],
+            "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
+        };
+    }
