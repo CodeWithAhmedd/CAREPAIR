@@ -124,14 +124,78 @@
 //         };
 //     }
     // }
-    function updateModels() {
-        let selectedBrand = document.getElementById('brand').value;
-        let carCards = document.querySelectorAll('.car-card');
-            carCards.forEach(card => {
-            if (selectedBrand === "" || card.getAttribute('data-brand') === selectedBrand) {
-                card.style.display = ''; 
-            } else {
-                card.style.display = 'none'; 
-            }
-        });
-    }
+
+//     function updateModels() {
+//         let brand = document.getElementById("brand").value;
+//         let modelSelect = document.getElementById("model");
+//         modelSelect.innerHTML = '<option value="" disabled selected>Select a model</option>';
+
+//         let models = [];
+// if (brand) {
+//     models = {
+//         "toyota": ["Corolla", "Camry", "Prius", "RAV"],
+//         "honda": ["Civic", "Accord", "CR-V", "Pilot"],
+//         "ford": ["F-150", "Mustang", "Explorer", "Escape"],
+//         "chevrolet": ["Silverado", "Malibu", "Equinox", "Travers"],
+//         "bmw": ["3 Series", "5 Series", "X5", "X3"],
+//         "audi": ["A3", "A4", "Q5", "Q7"],
+//         "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
+// };
+// }
+// if (models[brand]) {
+//     models[brand].forEach(function(model) {
+//     let option = document.createElement("option");
+//     option.value = model.toLowerCase();
+//     option.text = model;
+//     modelSelect.add(option);
+// });
+// }
+// }
+                                    
+    //     switch (brand) {
+    //         case "toyota":
+    //             models = ["Corolla", "Camry", "Prius", "RAV4", "Highlander"];
+    //             break;
+    //         case "honda":
+    //             models = ["Civic", "Accord", "CR-V", "Pilot", "Odyssey"];
+    //             break;
+    //         case "ford":
+    //             models = ["Mustang", "F-150", "Explorer", "Escape", "Edge"];
+    //             break;
+    //         case "chevrolet":
+    //             models = ["Silverado", "Malibu", "Equinox", "Traverse", "Tahoe"];
+    //             break;
+    //         case "bmw":
+    //             models = ["3 Series", "X5", "M4", "X3", "7 Series"];
+    //             break;
+    //         case "audi":
+    //             models = ["A3", "A6", "Q5", "Q7", "A8"];
+    //             break;
+    //         case "mercedes":
+    //             models = ["C-Class", "E-Class", "S-Class", "GLE", "GLC"];
+    //             break;
+    //         default:
+    //             models = [];
+    //     }
+
+    //     models.forEach(model => {
+    //         let option = document.createElement("option");
+    //         option.value = model.toLowerCase();
+    //         option.textContent = model;
+    //         modelSelect.appendChild(option);
+    //     });
+    // }
+
+    // function updateModels() {
+    //     let selectedBrand = document.getElementById('brand').value;
+    //     let carCards = document.querySelectorAll('.car-card');
+    //         carCards.forEach(card => {
+    //         if (selectedBrand === "" || card.getAttribute('data-brand') === selectedBrand) {
+    //             card.style.display = ''; 
+    //         } else {
+    //             card.style.display = 'none'; 
+    //         }
+    // });
+    // }
+
+    
