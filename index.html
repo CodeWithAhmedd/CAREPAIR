@@ -5,89 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Information Website</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <header>
         <div class="logo">CarInfo</div>
-        <form>
-            <label for="brand">Select a car brand:</label>
-            <select id="brand" name="brand" onchange="updateModels()">
-                <option value="" disabled selected>Select a brand</option>
-                <option value="toyota">Toyota</option>
-                <option value="honda">Honda</option>
-                <option value="ford">Ford</option>
-                <option value="chevrolet">Chevrolet</option>
-                <option value="bmw">BMW</option>
-                <option value="audi">Audi</option>
-                <option value="mercedes">Mercedes</option>
-            </select>
-
-            <label for="model">Select a model:</label>
-            <select id="model" name="model">
-                <option value="" disabled selected>Select a model</option>
-            </select>
-        </form>
+        <label for="carModels">Select a Car Brands:</label>
+        <select onchange="handleBrandChange()" name="" id="carBrands">
+            <option value="">ALL</option>
+        </select>
+        <label for="carModels">Select a Car Model:</label>
+        <select name="carModels" id="carModels">
+            <option value="">ALL</option>
+        </select>
+        
+        
+        <button class="searchbtn" onclick="searchCar()">Search</button>
+      
+     
     </header>
+    <div class="container-fluid py-5 px-5">
+        <div class="row" id="car-list">
+           
+        </div>
+    </div>
+           
 
-    <main>
-        <section class="featured-cars">
-            <div class="car-card" data-brand="honda">
-                <img src="Rent-a-Honda-Civic-2020.jpg.webp" alt="Car Model">
-                <h3>Honda</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="car-card" data-brand="bmw">
-                <img src="2023_04_03_bmw_mena_the_electric_cars_ix3.webp" alt="Car Model">
-                <h3>BMW</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="car-card" data-brand="toyota">
-                <img src="Midnight Black Metallic-218-26,28,33-640-en_US.avif" alt="Car Model">
-                <h3>TOYOTA</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-
-            <div class="car-card" data-brand="ford">
-                <img src="Lineup-2410-Expedition.webp" alt="Car Model">
-                <h3>FORD</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-
-            <div class="car-card" data-brand="chevrolet">
-                <img src="silverado-z71-variant-northsky-blue-metallic.webp" alt="Car Model">
-                <h3>CHEVROLET</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="car-card" data-brand="audi">
-                <img src="web_1440_A6.jpg" alt="Car Model">
-                <h3>AUDI</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-            <div class="car-card" data-brand="mercedes">
-                <img src="831.avif" alt="Car Model">
-                <h3>MERCEDES</h3>
-                <p>Brief description of the car.</p>
-                <a href="#">View Details</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+ <footer>
         <p>&copy; 2025 CarInfo. All rights reserved.</p>
         <div class="social-media">
             <a href="#">Facebook</a>
             <a href="#">Twitter</a>
             <a href="#">Instagram</a>
         </div>
-    </footer>
+    </footer> 
 
-    
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>

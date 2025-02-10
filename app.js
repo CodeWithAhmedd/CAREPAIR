@@ -1,201 +1,159 @@
-// // Sample car data for demonstration
-// const cars = [
-//     { id: 1, name: "Car Model 1", description: "A great car for city driving.", image: "car1.jpg" },
-//     { id: 2, name: "Car Model 2", description: "An excellent choice for families.", image: "car2.jpg" },
-//     { id: 3, name: "Car Model 3", description: "A powerful sports car.", image: "car3.jpg" },
-//     { id: 4, name: "Car Model 4", description: "An eco-friendly electric vehicle.", image: "car4.jpg" },
-// ];
+let cars = {
+    toyota: {
+        camry: {
+            model: "Toyota Camry",
+            year: 2015,
+            price: 2500000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThLDxs7-UtcNPy0xyXioK171yy_8AEKBWHtA&s"
+        },
+        corolla: {
+            model: "Toyota Corolla",
+            year: 2018,
+            price: 2800000,
+            picture: "https://propakistani.pk/wp-content/uploads/2017/12/Corolla-2018.jpg"
+        },
+        hilux: {
+            model: "Toyota Hilux",
+            year: 2019,
+            price: 4000000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVMHmpy7iXnQhb3xESBbobqsc2uwz1PgnQMg&s"
+        },
+        landCruiser: {
+            model: "Toyota Land Cruiser",
+            year: 2020,
+            price: 7000000,
+            picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/2021_Toyota_Land_Cruiser_300_3.4_ZX_%28Colombia%29_front_view_04.png/800px-2021_Toyota_Land_Cruiser_300_3.4_ZX_%28Colombia%29_front_view_04.png"
+        },
+        rav4: {
+            model: "Toyota RAV4",
+            year: 2021,
+            price: 3500000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS46mNuYNjdAzZQ6Jtj9Z8P0nIPHBXwYA50Aw&s"
+        }
+    },
+    honda: {
+        civic: {
+            model: "Honda Civic",
+            year: 2018,
+            price: 2800000,
+            picture: "https://static0.carbuzzimages.com/wordpress/wp-content/uploads/gallery-images/original/478000/400/478468.jpg"
+        },
+        accord: {
+            model: "Honda Accord",
+            year: 2017,
+            price: 3000000,
+            picture: "https://media.ed.edmunds-media.com/honda/accord/2017/oem/2017_honda_accord_sedan_touring-v-6_fq_oem_6_600.jpg"
+        },
+        crv: {
+            model: "Honda CR-V",
+            year: 2020,
+            price: 3300000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPejzO2Y84BWm3nueYdwtzUfRt6tnLirmsEg&s"
+        },
+        pilot: {
+            model: "Honda Pilot",
+            year: 2019,
+            price: 4500000,
+            picture: "https://media.ed.edmunds-media.com/honda/pilot/2023/oem/2023_honda_pilot_4dr-suv_elite_fq_oem_1_815.jpg"
+        },
+        odyssey: {
+            model: "Honda Odyssey",
+            year: 2021,
+            price: 4200000,
+            picture: "https://hips.hearstapps.com/hmg-prod/images/2021-honda-odyssey-293-1598917033.jpg?crop=0.566xw:0.477xh;0.171xw,0.501xh&resize=1200:*"
+        }
+    },
+    ford: {
+        mustang: {
+            model: "Ford Mustang",
+            year: 2020,
+            price: 5000000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTdU6X4tsYqo8KEWt_t-vvSVx7-_TUH9dEc6Idi2Jcfhp2KJgnCK1Av-eVDbrPlcEL9Ac&usqp=CAU"
+        },
+        focus: {
+            model: "Ford Focus",
+            year: 2019,
+            price: 2500000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJi4XL0txY72tkzfuOcAF4vReMoZhHSEEZJQ&s"
+        },
+        explorer: {
+            model: "Ford Explorer",
+            year: 2021,
+            price: 5000000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMdMPDvCJuvmF-iGgRD9o8XndH0mldF8O2w&s"
+        },
+        ranger: {
+            model: "Ford Ranger",
+            year: 2020,
+            price: 3800000,
+            picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHDCxNpR-qEhfnfEr8PNxObpHlQkwEVL6AQ&s"
+        },
+        f150: {
+            model: "Ford F-150",
+            year: 2020,
+            price: 5500000,
+            picture: "https://hips.hearstapps.com/hmg-prod/images/2024-ford-f-150-raptor-r-296-67092b83c578d.jpg?crop=0.572xw:0.645xh;0.165xw,0.333xh&resize=768:*"
+        }
+    }
+}
 
-// // Function to display featured cars
-// function displayFeaturedCars() {
-//     const carGrid = document.querySelector('.car-grid');
-//     carGrid.innerHTML = ''; // Clear existing content
+let brands = document.getElementById("carBrands");
+let models = document.getElementById("carModels");
+let carList = document.getElementById("car-list");
 
-//     cars.forEach(car => {
-//         const carCard = document.createElement('div');
-//         carCard.classList.add('car-card');
-//         carCard.innerHTML = `
-//             <img src="${car.image}" alt="${car.name}">
-//             <h3>${car.name}</h3>
-//             <p>${car.description}</p>
-//             <a href="#">View Details</a>
-//         `;
-//         carGrid.appendChild(carCard);
-//     });
-// }
+function loadAllCars(){
+    for (let brand in cars) {
+        brands.innerHTML += `<option value="${brand}">${brand.toUpperCase()}</option>`;
+        for (let model in cars[brand]) {
+            let detail = cars[brand][model];
+            carList.innerHTML += ` <div class="col">
+                    <div class="card" style="width: 18rem;" id="card">
+                        <img src="${detail.picture}" class="card-img-top car-image" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">${detail.model}</h5>
+                          <p class="card-text">${detail.year}</p>
+                          <a href="#" class="btn btn-primary">Rs ${detail.price}</a>
+                        </div>
+                      </div>
+                </div>`
+    }
+    }
 
-// // Search function
-// function searchCars() {
-//     const searchInput = document.querySelector('header input[type="text"]');
-//     const searchTerm = searchInput.value.toLowerCase();
-//     const filteredCars = cars.filter(car => car.name.toLowerCase().includes(searchTerm));
+}
+loadAllCars();
+function handleBrandChange(){
+    models.innerHTML = `<option value="">ALL</option>`;
+    for (let keys in cars[brands.value]){
+        models.innerHTML += `<option value="${keys}">${keys.toUpperCase()}</option>`;
+        }
+        }
 
-//     const carGrid = document.querySelector('.car-grid');
-//     carGrid.innerHTML = ''; // Clear existing content
-
-//     filteredCars.forEach(car => {
-//         const carCard = document.createElement('div');
-//         carCard.classList.add('car-card');
-//         carCard.innerHTML = `
-//             <img src="${car.image}" alt="${car.name}">
-//             <h3>${car.name}</h3>
-//             <p>${car.description}</p>
-//             <a href="#">View Details</a>
-//         `;
-//         carGrid.appendChild(carCard);
-//     });
-// }
-
-// // Newsletter signup form validation
-// function validateNewsletterForm(event) {
-//     event.preventDefault(); // Prevent form submission
-
-//     const emailInput = document.querySelector('aside input[type="email"]');
-//     const email = emailInput.value;
-
-//     // Simple email validation
-//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     if (emailPattern.test(email)) {
-//         alert("Thank you for subscribing!");
-//         emailInput.value = ''; // Clear the input field
-//     } else {
-//         alert("Please enter a valid email address.");
-//     }
-// }
-
-// // Event listeners
-// document.addEventListener('DOMContentLoaded', () => {
-//     displayFeaturedCars(); // Display cars on page load
-
-//     // Search functionality
-//     const searchInput = document.querySelector('header input[type="text"]');
-//     searchInput.addEventListener('input', searchCars);
-
-//     // Newsletter signup form
-//     const newsletterForm = document.querySelector('aside form');
-//     newsletterForm.addEventListener('submit', validateNewsletterForm);
-// });
-
-// function updateModels() {
-//     let brand = document.getElementById("brand").value;
-//     let modelSelect = document.getElementById("model");
-    
-//     modelSelect.innerHTML = "";
-    
-//     let models = {
-//         "toyota": ["Corolla", "Camry", "Prius", "RAV4"],
-//         "honda": ["Civic", "Accord", "CR-V", "Pilot"],
-//         "ford": ["F-150", "Mustang", "Explorer", "Escape"],
-//         "chevrolet": ["Silverado", "Malibu", "Equinox", "Traverse"],
-//         "bmw": ["3 Series", "5 Series", "X5", "X3"],
-//         "audi": ["A3", "A4", "Q5", "Q7"],
-//         "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
-//     };
-
-//     let defaultOption = document.createElement("option");
-//     defaultOption.text = "Select a model";
-//     defaultOption.disabled = true;
-//     defaultOption.selected = true;
-//     modelSelect.add(defaultOption);
-
-    
-//     if (models[brand]) {
-//         models[brand].forEach(function(model) {
-//             let option = document.createElement("option");
-//             option.value = model.toLowerCase();
-//             option.text = model;
-//             modelSelect.add(option);
-//         });
-//     }
-// function updateModels() {
-    //         let brand = document.getElementById("brand").value;
-    //         let modelSelect = document.getElementById("model");
-    
-//         modelSelect.innerHTML = "";
-        
-//         let models = {
-//             "toyota": ["Corolla", "Camry", "Prius", "RAV4"],
-//             "honda": ["Civic", "Accord", "CR-V", "Pilot"],
-//             "ford": ["F-150", "Mustang", "Explorer", "Escape"],
-//             "chevrolet": ["Silverado", "Malibu", "Equinox", "Traverse"],
-//             "bmw": ["3 Series", "5 Series", "X5", "X3"],
-//             "audi": ["A3", "A4", "Q5", "Q7"],
-//             "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
-//         };
-//     }
-    // }
-
-//     function updateModels() {
-//         let brand = document.getElementById("brand").value;
-//         let modelSelect = document.getElementById("model");
-//         modelSelect.innerHTML = '<option value="" disabled selected>Select a model</option>';
-
-//         let models = [];
-// if (brand) {
-//     models = {
-//         "toyota": ["Corolla", "Camry", "Prius", "RAV"],
-//         "honda": ["Civic", "Accord", "CR-V", "Pilot"],
-//         "ford": ["F-150", "Mustang", "Explorer", "Escape"],
-//         "chevrolet": ["Silverado", "Malibu", "Equinox", "Travers"],
-//         "bmw": ["3 Series", "5 Series", "X5", "X3"],
-//         "audi": ["A3", "A4", "Q5", "Q7"],
-//         "mercedes": ["A-Class", "C-Class", "E-Class", "GLC"]
-// };
-// }
-// if (models[brand]) {
-//     models[brand].forEach(function(model) {
-//     let option = document.createElement("option");
-//     option.value = model.toLowerCase();
-//     option.text = model;
-//     modelSelect.add(option);
-// });
-// }
-// }
-                                    
-    //     switch (brand) {
-    //         case "toyota":
-    //             models = ["Corolla", "Camry", "Prius", "RAV4", "Highlander"];
-    //             break;
-    //         case "honda":
-    //             models = ["Civic", "Accord", "CR-V", "Pilot", "Odyssey"];
-    //             break;
-    //         case "ford":
-    //             models = ["Mustang", "F-150", "Explorer", "Escape", "Edge"];
-    //             break;
-    //         case "chevrolet":
-    //             models = ["Silverado", "Malibu", "Equinox", "Traverse", "Tahoe"];
-    //             break;
-    //         case "bmw":
-    //             models = ["3 Series", "X5", "M4", "X3", "7 Series"];
-    //             break;
-    //         case "audi":
-    //             models = ["A3", "A6", "Q5", "Q7", "A8"];
-    //             break;
-    //         case "mercedes":
-    //             models = ["C-Class", "E-Class", "S-Class", "GLE", "GLC"];
-    //             break;
-    //         default:
-    //             models = [];
-    //     }
-
-    //     models.forEach(model => {
-    //         let option = document.createElement("option");
-    //         option.value = model.toLowerCase();
-    //         option.textContent = model;
-    //         modelSelect.appendChild(option);
-    //     });
-    // }
-
-    // function updateModels() {
-    //     let selectedBrand = document.getElementById('brand').value;
-    //     let carCards = document.querySelectorAll('.car-card');
-    //         carCards.forEach(card => {
-    //         if (selectedBrand === "" || card.getAttribute('data-brand') === selectedBrand) {
-    //             card.style.display = ''; 
-    //         } else {
-    //             card.style.display = 'none'; 
-    //         }
-    // });
-    // }
-
-    
+        function searchCar(){
+            carList.innerHTML = "";
+            if(brands.value && models.value){
+                let detail = cars[brands.value][models.value]
+                carList.innerHTML = ` <div class="col">
+                <div class="card" style="width: 18rem;" id="card">
+                    <img src="${detail.picture}" class="card-img-top car-image" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${detail.model}</h5>
+                      <p class="card-text">${detail.year}</p>
+                      <a href="#" class="btn btn-primary">Rs ${detail.price}</a>
+                    </div>
+                  </div>
+            </div>`}
+             else if (brands.value){
+            for (let model in cars[brands.value]){
+                let detail = cars[brands.value][model]
+                carList.innerHTML += ` <div class="col">
+                <div class="card" style="width: 18rem;" id="card">
+                    <img src="${detail.picture}" class="card-img-top car-image" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${detail.model}</h5>
+                      <p class="card-text">${detail.year}</p>
+                      <a href="#" class="btn btn-primary">Rs ${detail.price}</a>
+                    </div>
+                  </div>
+            </div>`
+        }}
+    else(loadAllCars())}
