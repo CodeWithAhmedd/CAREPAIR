@@ -1,10 +1,11 @@
 /* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    /* background-color: #000000 !important; */
     color: #333;
 }
 
@@ -46,6 +47,9 @@ header .logo {
     transform: scale(1.1); 
 
 }
+.repair{
+    color: #ff0000;
+}
 .searchbtn{
     background-color: #ffffff;
     padding: 4px;
@@ -56,6 +60,7 @@ header .logo {
 }
 .searchbtn:hover{
     background-color: #d1d1d1;
+    transform: scale(1.1);
 }
 .searchbtn:active{
     background-color: #ffffff;
@@ -95,7 +100,7 @@ main {
 
 /* Hero Section */
 .hero {
-    background: url('') no-repeat center center/cover;
+    /* background: url('') no-repeat center center/cover; */
     color: rgb(0, 0, 0);
     padding: 60px 20px;
     text-align: center;
@@ -158,14 +163,7 @@ main {
 } */
 
 /* Sidebar Styles */
-aside {
-    flex: 1;
-    background: #fff;
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+
 
 aside h2 {
     margin-top: 0;
