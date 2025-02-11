@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    /* background-color: #000000 !important; */
+    background-color: #787878 !important;
     color: #333;
 }
 
@@ -51,19 +51,24 @@ header .logo {
     color: #ff0000;
 }
 .searchbtn{
-    background-color: #ffffff;
+    background-color: #ff0000;
     padding: 4px;
     width: 80px;
     border-radius:4px ;
-    border: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: 600;
     font-size: 15px;
 }
 .searchbtn:hover{
-    background-color: #d1d1d1;
+    background-color: #a40000;
     transform: scale(1.1);
 }
 .searchbtn:active{
-    background-color: #ffffff;
+    background-color: #ff7b7b;
+}
+.btn{
+    background-color: #ff0000 !important;
 }
 nav ul {
     list-style: none;
