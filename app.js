@@ -107,7 +107,7 @@ function loadAllCars(){
         for (let model in cars[brand]) {
             let detail = cars[brand][model];
             carList.innerHTML += ` <div class="col">
-                    <div class="card" style="width: 18rem;" id="card">
+                    <div class="card" style="width: 19rem;" id="card">
                         <img src="${detail.picture}" class="card-img-top car-image" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">${detail.model}</h5>
