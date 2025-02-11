@@ -59,6 +59,7 @@ header .logo {
     color: #ffffff;
     font-weight: 600;
     font-size: 15px;
+    margin-right: 30px;
 }
 .searchbtn:hover{
     background-color: #a40000;
